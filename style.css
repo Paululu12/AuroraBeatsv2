@@ -525,6 +525,14 @@ p {
     overflow: hidden;
 }
 
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr !important;
+        gap: var(--spacing-md);
+        width: 100%;
+    }
+}
+
 .feature-card {
     background: rgba(255,255,255,0.02);
     border: 1px solid rgba(255,255,255,0.06);
@@ -1003,11 +1011,19 @@ p {
     .about-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-md);
+        width: 100%;
+    }
+
+    .feature-card {
+        width: 100% !important;
+        max-width: 100% !important;
     }
 
     .hero-eyebrow {
-        font-size: 0.85rem;
-        letter-spacing: 0.1em;
+        font-size: 0.8rem;
+        letter-spacing: 0.08em;
+        word-break: break-word;
+        hyphens: auto;
     }
 
     .footer-content {
@@ -1038,7 +1054,13 @@ p {
         --spacing-xxl: 2.5rem;
     }
 
+    * {
+        max-width: 100%;
+    }
+
     .container {
+        max-width: 100% !important;
+        width: 100% !important;
         padding: 0 var(--spacing-sm);
     }
 
@@ -1051,7 +1073,7 @@ p {
     }
 
     .hero-description {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
     .section-title {
@@ -1059,7 +1081,15 @@ p {
     }
 
     p {
-        font-size: 1rem;
+        font-size: 0.95rem;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .feature-card {
+        width: 100% !important;
     }
 
     .schedule-header {
@@ -1072,6 +1102,6 @@ p {
 
     .btn {
         padding: var(--spacing-sm) var(--spacing-md);
-        font-size: 0.95rem;
+        font-size: 0.9rem;
     }
 }
