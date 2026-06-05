@@ -333,7 +333,7 @@ p {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding-top: 120px;
+    padding-top: 160px;
     position: relative;
     background: linear-gradient(135deg, rgba(255, 212, 0, 0.02) 0%, rgba(0,0,0,0) 100%);
     overflow: hidden;
@@ -983,6 +983,10 @@ p {
     }
 
     .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-grid {
         grid-template-columns: 1fr;
     }
 
