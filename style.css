@@ -5,8 +5,8 @@
 /* CSS Variables */
 :root {
     --color-primary: #FFD400;
-    --color-dark: #FFFFFF; /* main text color */
-    --color-light: #000000; /* page background (enforced black) */
+    --color-dark: #FFFFFF;
+    --color-light: #000000;
     --color-gray-light: #0f0f0f;
     --color-gray-medium: #2b2b2b;
     --color-gray-dark: #cfcfcf;
@@ -39,11 +39,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    min-width: 0;
 }
 
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
 }
 
 body {
@@ -69,6 +72,11 @@ body::before {
 
 section {
     scroll-margin-top: 100px;
+}
+
+img, video, iframe, svg {
+    max-width: 100%;
+    height: auto;
 }
 
 /* ========================================
@@ -150,7 +158,7 @@ p {
 
 .btn-primary {
     background: var(--color-primary);
-    color: var(--color-light); /* dark text on yellow */
+    color: var(--color-light);
     border-color: rgba(0,0,0,0.08);
 }
 
@@ -192,12 +200,18 @@ p {
     justify-content: space-between;
     align-items: center;
     padding: var(--spacing-sm) 0;
+    min-width: 0;
+    flex-wrap: wrap;
 }
 
 .logo {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--color-dark);
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    white-space: normal;
 }
 
 .logo-text {
@@ -206,15 +220,34 @@ p {
     color: var(--color-primary);
     display: inline-block;
     transform: translateY(-2px);
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    white-space: normal;
 }
 
-.logo-link { display:flex; align-items:center; gap:8px; text-decoration:none; }
-.logo-mark { display:inline-block; color:var(--color-primary); font-size:0.9rem; transform: rotate(-18deg); opacity:0.95; }
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    min-width: 0;
+    flex-wrap: wrap;
+}
+
+.logo-mark {
+    display: inline-block;
+    color: var(--color-primary);
+    font-size: 0.9rem;
+    transform: rotate(-18deg);
+    opacity: 0.95;
+}
 
 .nav-links {
     display: flex;
     list-style: none;
     gap: var(--spacing-xl);
+    min-width: 0;
 }
 
 .nav-link {
@@ -305,6 +338,8 @@ p {
     backdrop-filter: blur(6px);
     padding: var(--spacing-lg);
     z-index: 999;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 .mobile-menu.active {
@@ -362,10 +397,12 @@ p {
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-xxl);
     align-items: center;
+    min-width: 0;
 }
 
 .hero-text {
     z-index: 2;
+    min-width: 0;
 }
 
 .hero-eyebrow {
@@ -376,8 +413,9 @@ p {
     text-transform: uppercase;
     margin-bottom: var(--spacing-md);
     word-wrap: break-word;
-    overflow-wrap: break-word;
+    overflow-wrap: anywhere;
     max-width: 100%;
+    white-space: normal;
 }
 
 .hero-title {
@@ -389,6 +427,9 @@ p {
     letter-spacing: -1px;
     font-weight: 800;
     animation: fadeInUp 0.8s ease;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    max-width: 100%;
 }
 
 .hero-subtitle {
@@ -397,6 +438,8 @@ p {
     margin-bottom: var(--spacing-lg);
     font-weight: 600;
     animation: fadeInUp 0.8s ease 0.1s both;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .hero-description {
@@ -430,6 +473,9 @@ p {
     border-radius: 999px;
     box-shadow: 0 16px 40px rgba(0,0,0,0.14);
     transition: transform var(--transition), background var(--transition);
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    white-space: normal;
 }
 
 .hero-indicator:hover {
@@ -522,14 +568,6 @@ p {
     width: 100%;
     max-width: 100%;
     overflow: hidden;
-}
-
-@media (max-width: 768px) {
-    .about-grid {
-        grid-template-columns: 1fr !important;
-        gap: var(--spacing-md);
-        width: 100%;
-    }
 }
 
 .feature-card {
@@ -1008,7 +1046,7 @@ p {
     }
 
     .about-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
         gap: var(--spacing-md);
         width: 100%;
     }
@@ -1045,6 +1083,14 @@ p {
     .contact {
         padding: var(--spacing-xl) 0;
     }
+
+    .schedule-header {
+        flex-direction: column;
+    }
+
+    .schedule-time {
+        margin-top: var(--spacing-sm);
+    }
 }
 
 @media (max-width: 480px) {
@@ -1055,6 +1101,12 @@ p {
 
     * {
         max-width: 100%;
+    }
+
+    html, body {
+        overflow-x: hidden !important;
+        width: 100%;
+        max-width: 100vw;
     }
 
     .container {
@@ -1102,5 +1154,15 @@ p {
     .btn {
         padding: var(--spacing-sm) var(--spacing-md);
         font-size: 0.9rem;
+    }
+
+    .hero-eyebrow,
+    .hero-title,
+    .hero-subtitle,
+    .logo,
+    .logo-text {
+        overflow-wrap: anywhere;
+        word-break: break-word;
+        white-space: normal;
     }
 }
