@@ -56,6 +56,14 @@ function initializeNavigation() {
         });
     });
 
+    // Close mobile menu on outside click
+    document.addEventListener('click', (event) => {
+        if (!mobileMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+            mobileMenu.classList.remove('active');
+            menuToggle.classList.remove('active');
+        }
+    });
+
     // Sticky navbar background (dark theme)
     window.addEventListener('scroll', () => {
         const navbar = document.getElementById('navbar');
