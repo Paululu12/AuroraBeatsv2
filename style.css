@@ -407,15 +407,22 @@ p {
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
-    margin-top: var(--spacing-md);
-    color: rgba(255,255,255,0.8);
+    margin-top: calc(var(--spacing-md) / 2);
+    width: fit-content;
+    padding: 0.65rem 1rem;
+    color: rgba(255,255,255,0.9);
     font-size: 0.95rem;
     letter-spacing: 0.02em;
-    transition: transform var(--transition);
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 999px;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.14);
+    transition: transform var(--transition), background var(--transition);
 }
 
 .hero-indicator:hover {
-    transform: translateY(-2px);
+    transform: translateY(-1px);
+    background: rgba(255,255,255,0.09);
 }
 
 .hero-arrow {
@@ -518,9 +525,24 @@ p {
 }
 
 .feature-card h3 {
-    font-size: 1.1rem;
+    position: relative;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
     margin-bottom: var(--spacing-sm);
-    color: var(--color-dark);
+    color: var(--color-primary);
+    padding-bottom: 0.85rem;
+}
+
+.feature-card h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 3px;
+    border-radius: 999px;
+    background: var(--color-primary);
 }
 
 .feature-card p {
@@ -676,7 +698,7 @@ p {
 .contact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--spacing-lg);
+    gap: calc(var(--spacing-lg) + 0.5rem);
     margin-bottom: var(--spacing-xxl);
 }
 
@@ -709,9 +731,24 @@ p {
 }
 
 .contact-card h3 {
-    font-size: 1.3rem;
+    position: relative;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
     margin-bottom: var(--spacing-md);
-    color: var(--color-dark);
+    color: var(--color-primary);
+    padding-bottom: 0.9rem;
+}
+
+.contact-card h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 44px;
+    height: 3px;
+    border-radius: 999px;
+    background: var(--color-primary);
 }
 
 .contact-card p {
