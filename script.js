@@ -56,15 +56,15 @@ function initializeNavigation() {
         });
     });
 
-    // Sticky navbar background
+    // Sticky navbar background (dark theme)
     window.addEventListener('scroll', () => {
         const navbar = document.getElementById('navbar');
         if (window.scrollY > 10) {
-            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-            navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+            navbar.style.background = 'rgba(8,8,8,0.96)';
+            navbar.style.boxShadow = '0 6px 30px rgba(0,0,0,0.6)';
         } else {
-            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-            navbar.style.boxShadow = '0 2px 16px rgba(0, 0, 0, 0.08)';
+            navbar.style.background = 'rgba(11,11,11,0.85)';
+            navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.6)';
         }
     });
 }
@@ -73,21 +73,19 @@ function initializeNavigation() {
 // SCHEDULE FUNCTIONALITY
 // ========================================
 
-async function initializeSchedule() {
+function initializeSchedule() {
     const scheduleContainer = document.getElementById('scheduleContainer');
 
     try {
-        const response = await fetch('schedule.json');
-        const scheduleData = await response.json();
+        const script = document.getElementById('scheduleData');
+        const scheduleData = script ? JSON.parse(script.textContent || '[]') : [];
 
         if (!Array.isArray(scheduleData) || scheduleData.length === 0) {
             scheduleContainer.innerHTML = '<p class="empty-schedule">Aktuell sind keine Sendungen geplant.</p>';
             return;
         }
 
-        // Limit to 8 entries
         const displayedSchedule = scheduleData.slice(0, 8);
-
         scheduleContainer.innerHTML = '';
 
         displayedSchedule.forEach((item, index) => {
