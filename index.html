@@ -29,6 +29,8 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     
     <!-- Styles -->
+    <!-- Google Fonts: Poppins for UI, Pacifico for logo -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -37,7 +39,10 @@
         <div class="container">
             <div class="navbar-content">
                 <div class="logo">
-                    <span class="logo-text">Aurora Beats</span>
+                    <a href="#hero" class="logo-link">
+                        <span class="logo-mark" aria-hidden="true">▲</span>
+                        <span class="logo-text">Aurora Beats</span>
+                    </a>
                 </div>
                 <ul class="nav-links">
                     <li><a href="#hero" class="nav-link">Start</a></li>
@@ -45,6 +50,10 @@
                     <li><a href="#schedule" class="nav-link">Sendeplan</a></li>
                     <li><a href="#contact" class="nav-link">Kontakt</a></li>
                 </ul>
+                <!-- Buy Me a Coffee button integrated in navbar -->
+                <div class="bmc-inline">
+                    <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="p4ul.wit" data-color="#FFDD00" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff"></script>
+                </div>
                 <button class="menu-toggle" id="menuToggle">
                     <span></span>
                     <span></span>
@@ -142,10 +151,11 @@
                 <div class="contact-card">
                     <h3>Instagram</h3>
                     <p class="label">Profil</p>
-                    <p><a href="https://instagram.com/p4ul.vit" target="_blank" class="social-link">@p4ul.vit</a></p>
+                    <p><a href="https://instagram.com/p4ul.wit" target="_blank" class="social-link">@p4ul.wit</a></p>
                     <div style="margin-top:12px;">
-                        <a class="btn btn-primary" href="https://instagram.com/p4ul.vit" target="_blank">Zum Profil</a>
+                        <a class="btn btn-primary" href="https://instagram.com/p4ul.wit" target="_blank">Zum Profil</a>
                     </div>
+                    <p style="margin-top:10px;color:var(--color-gray-dark);">Auf Instagram teile ich Mix‑Clips, Behind‑the‑Scenes und Hinweise zu anstehenden Shows.</p>
                 </div>
 
                 <div class="contact-card">
@@ -161,6 +171,8 @@
             <div class="contact-form-section" data-aos="fade-up" data-aos-delay="300">
                 <p>Oder nutze das Kontaktformular:</p>
                 <a href="https://forms.google.com/gform" target="_blank" class="btn btn-primary">Zum Kontaktformular</a>
+                <hr style="margin:18px 0;border:none;border-top:1px solid rgba(255,255,255,0.04);">
+                <p style="color:var(--color-gray-dark);max-width:820px;margin:0 auto;">Community: Unsere Discord‑Community ist der beste Ort, um Musikwünsche zu platzieren, an Höreraktionen teilzunehmen und direkt mit mir und anderen Musikfans in Kontakt zu kommen. Klick auf <strong>Community beitreten</strong>, um dabei zu sein.</p>
             </div>
         </div>
     </section>
@@ -180,8 +192,6 @@
     </footer>
 
     <script src="script.js"></script>
-    <!-- Buy Me a Coffee button (eingefügt) -->
-    <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="p4ul.wit" data-color="#FFDD00" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff"></script>
         <!-- Embedded schedule data so the site works without running a local server -->
         <script id="scheduleData" type="application/json">
         [

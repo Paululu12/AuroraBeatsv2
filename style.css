@@ -6,10 +6,10 @@
 :root {
     --color-primary: #FFD400;
     --color-dark: #FFFFFF; /* main text color */
-    --color-light: #0b0b0b; /* page background */
-    --color-gray-light: #1a1a1a;
-    --color-gray-medium: #3a3a3a;
-    --color-gray-dark: #bfbfbf;
+    --color-light: #000000; /* page background (enforced black) */
+    --color-gray-light: #0f0f0f;
+    --color-gray-medium: #2b2b2b;
+    --color-gray-dark: #cfcfcf;
     
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
@@ -46,8 +46,9 @@ html {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background: radial-gradient(1200px 600px at 10% 10%, rgba(255,212,0,0.03), transparent 6%), linear-gradient(180deg, #050505 0%, #0f0f10 100%);
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--color-light);
+    background-image: radial-gradient(900px 300px at 10% 10%, rgba(255,212,0,0.03), transparent 6%), linear-gradient(180deg, #000000 0%, #060606 100%);
     color: var(--color-dark);
     line-height: 1.6;
     overflow-x: hidden;
@@ -183,11 +184,15 @@ p {
 }
 
 .logo-text {
-    background: linear-gradient(135deg, var(--color-primary), #FFB800);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    font-family: 'Pacifico', cursive;
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    display: inline-block;
+    transform: translateY(-2px);
 }
+
+.logo-link { display:flex; align-items:center; gap:8px; text-decoration:none; }
+.logo-mark { display:inline-block; color:var(--color-primary); font-size:0.9rem; transform: rotate(-18deg); opacity:0.95; }
 
 .nav-links {
     display: flex;
@@ -273,7 +278,7 @@ p {
     align-items: center;
     padding-top: 80px;
     position: relative;
-    background: linear-gradient(135deg, rgba(255, 212, 0, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(135deg, rgba(255, 212, 0, 0.02) 0%, rgba(0,0,0,0) 100%);
     overflow: hidden;
 }
 
@@ -306,12 +311,12 @@ p {
 
 .hero-title {
     font-size: 4.5rem;
-    line-height: 1.1;
+    line-height: 1.05;
     margin-bottom: var(--spacing-md);
-    background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-primary) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--color-dark);
+    text-shadow: 0 6px 30px rgba(0,0,0,0.6), 0 1px 0 rgba(255,255,255,0.02);
+    letter-spacing: -1px;
+    font-weight: 800;
     animation: fadeInUp 0.8s ease;
 }
 
@@ -324,10 +329,11 @@ p {
 }
 
 .hero-description {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: var(--color-gray-dark);
     margin-bottom: var(--spacing-lg);
-    line-height: 1.8;
+    line-height: 1.7;
+    max-width: 640px;
     animation: fadeInUp 0.8s ease 0.2s both;
 }
 
@@ -381,7 +387,7 @@ p {
 
 .about {
     padding: var(--spacing-xxl) 0;
-    background: var(--color-light);
+    background: transparent;
     position: relative;
 }
 
@@ -415,7 +421,7 @@ p {
 
 .schedule {
     padding: var(--spacing-xxl) 0;
-    background: linear-gradient(135deg, rgba(255, 212, 0, 0.03) 0%, rgba(255, 212, 0, 0.05) 100%);
+    background: transparent;
     position: relative;
 }
 
@@ -533,7 +539,7 @@ p {
 
 .contact {
     padding: var(--spacing-xxl) 0;
-    background: var(--color-light);
+    background: transparent;
     position: relative;
 }
 
@@ -562,13 +568,15 @@ p {
 }
 
 .contact-card {
-    background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.01) 100%);
-    border: 1px solid rgba(255, 212, 0, 0.08);
-    border-radius: var(--radius-xl);
-    padding: var(--spacing-lg);
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border: 1px solid rgba(255, 212, 0, 0.06);
+    border-radius: calc(var(--radius-xl) + 4px);
+    padding: calc(var(--spacing-lg) + 6px);
     transition: var(--transition-smooth);
     position: relative;
     overflow: hidden;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
 }
 
 .contact-card::before {
@@ -637,11 +645,11 @@ p {
    ======================================== */
 
 .footer {
-    background: var(--color-light);
+    background: transparent;
     color: var(--color-dark);
     padding: var(--spacing-xl) 0;
     position: relative;
-    border-top: 1px solid rgba(255, 212, 0, 0.08);
+    border-top: 1px solid rgba(255, 212, 0, 0.04);
 }
 
 .footer-content {
