@@ -2,7 +2,6 @@
    AURORA BEATS - Modern Design System
    ======================================== */
 
-/* CSS Variables */
 :root {
     --color-primary: #FFD400;
     --color-dark: #FFFFFF;
@@ -30,10 +29,6 @@
     --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.15);
     --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.2);
 }
-
-/* ========================================
-   GLOBAL STYLES
-   ======================================== */
 
 * {
     margin: 0;
@@ -79,19 +74,11 @@ img, video, iframe, svg {
     height: auto;
 }
 
-/* ========================================
-   CONTAINER
-   ======================================== */
-
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--spacing-md);
 }
-
-/* ========================================
-   TYPOGRAPHY
-   ======================================== */
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
@@ -122,10 +109,6 @@ p {
     color: var(--color-gray-dark);
     margin-bottom: var(--spacing-md);
 }
-
-/* ========================================
-   BUTTONS
-   ======================================== */
 
 .btn {
     display: inline-block;
@@ -178,10 +161,6 @@ p {
     color: var(--color-light);
     box-shadow: 0 12px 24px rgba(17, 17, 17, 0.3);
 }
-
-/* ========================================
-   NAVBAR
-   ======================================== */
 
 .navbar {
     position: fixed;
@@ -526,10 +505,6 @@ p {
     left: 30%;
 }
 
-/* ========================================
-   ABOUT SECTION
-   ======================================== */
-
 .about {
     padding: var(--spacing-xxl) 0;
     background: transparent;
@@ -615,10 +590,6 @@ p {
     color: var(--color-gray-dark);
     line-height: 1.8;
 }
-
-/* ========================================
-   SCHEDULE SECTION
-   ======================================== */
 
 .schedule {
     padding: var(--spacing-xxl) 0;
@@ -733,10 +704,6 @@ p {
     color: var(--color-gray-dark);
     font-size: 1.1rem;
 }
-
-/* ========================================
-   CONTACT SECTION
-   ======================================== */
 
 .contact {
     padding: var(--spacing-xxl) 0;
@@ -856,10 +823,6 @@ p {
     font-size: 1.05rem;
 }
 
-/* ========================================
-   FOOTER
-   ======================================== */
-
 .footer {
     background: transparent;
     color: var(--color-dark);
@@ -897,199 +860,66 @@ p {
     margin: 0;
 }
 
-/* ========================================
-   ANIMATIONS
-   ======================================== */
-
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes floatGlow {
-    0%, 100% {
-        transform: translate(0, 0) scale(1);
-    }
-    25% {
-        transform: translate(20px, -20px) scale(1.05);
-    }
-    50% {
-        transform: translate(-10px, 20px) scale(0.95);
-    }
-    75% {
-        transform: translate(-20px, -10px) scale(1.08);
-    }
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(20px, -20px) scale(1.05); }
+    50% { transform: translate(-10px, 20px) scale(0.95); }
+    75% { transform: translate(-20px, -10px) scale(1.08); }
 }
 
 @keyframes slideInFromLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes slideInFromRight {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
 }
 
-.aos-fade-up {
-    animation: fadeInUp 0.6s ease-out;
-}
-
-.aos-slide-left {
-    animation: slideInFromLeft 0.6s ease-out;
-}
-
-.aos-slide-right {
-    animation: slideInFromRight 0.6s ease-out;
-}
-
-/* ========================================
-   MEDIA QUERIES
-   ======================================== */
+.aos-fade-up { animation: fadeInUp 0.6s ease-out; }
+.aos-slide-left { animation: slideInFromLeft 0.6s ease-out; }
+.aos-slide-right { animation: slideInFromRight 0.6s ease-out; }
 
 @media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
+    .nav-links { display: none; }
+    .bmc-inline { display: none; }
+    .navbar-content { flex-wrap: wrap; gap: var(--spacing-sm); }
+    .menu-toggle { display: flex; }
+    .mobile-menu-cta { margin-top: var(--spacing-lg); }
+    .mobile-menu-cta .bmc-button { width: 100%; justify-content: center; }
+    .mobile-menu.active { display: block; }
 
-    .bmc-inline {
-        display: none;
-    }
+    .hero-content { grid-template-columns: 1fr; }
+    .hero-title { font-size: 2.5rem; }
+    .hero-subtitle { font-size: 1.2rem; }
+    .hero-visual { display: none; }
+    .glow-circle:nth-child(1) { width: 150px; height: 150px; }
+    .glow-circle:nth-child(2) { width: 200px; height: 200px; }
+    .glow-circle:nth-child(3) { width: 100px; height: 100px; }
+    .section-title { font-size: 2rem; margin-bottom: var(--spacing-xl); }
+    .hero-buttons { flex-direction: column; }
+    .hero-buttons .btn { width: 100%; text-align: center; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr !important; gap: var(--spacing-md); width: 100%; }
+    .feature-card { width: 100% !important; max-width: 100% !important; }
+    .hero-eyebrow { font-size: 0.8rem; letter-spacing: 0.08em; word-break: break-word; hyphens: auto; }
+    .footer-content { flex-direction: column; text-align: center; }
+    .footer-links { justify-content: center; }
+    .hero { min-height: auto; padding-top: 100px; padding-bottom: var(--spacing-xl); }
+    .about, .schedule, .contact { padding: var(--spacing-xl) 0; }
+    .schedule-header { flex-direction: column; }
+    .schedule-time { margin-top: var(--spacing-sm); }
 
-    .navbar-content {
-        flex-wrap: wrap;
-        gap: var(--spacing-sm);
-    }
-
-    .menu-toggle {
-        display: flex;
-    }
-
-    .mobile-menu-cta {
-        margin-top: var(--spacing-lg);
-    }
-
-    .mobile-menu-cta .bmc-button {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .mobile-menu.active {
-        display: block;
-    }
-
-    .hero-content {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-title {
-        font-size: 2.5rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.2rem;
-    }
-
-    .hero-visual {
-        display: none;
-    }
-
-    .glow-circle:nth-child(1) {
-        width: 150px;
-        height: 150px;
-    }
-
-    .glow-circle:nth-child(2) {
-        width: 200px;
-        height: 200px;
-    }
-
-    .glow-circle:nth-child(3) {
-        width: 100px;
-        height: 100px;
-    }
-
-    .section-title {
-        font-size: 2rem;
-        margin-bottom: var(--spacing-xl);
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-    }
-
-    .hero-buttons .btn {
-        width: 100%;
-        text-align: center;
-    }
-
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .about-grid {
+    .about-grid,
+    .contact-grid,
+    .schedule-container {
         grid-template-columns: 1fr !important;
-        gap: var(--spacing-md);
-        width: 100%;
-    }
-
-    .feature-card {
-        width: 100% !important;
-        max-width: 100% !important;
-    }
-
-    .hero-eyebrow {
-        font-size: 0.8rem;
-        letter-spacing: 0.08em;
-        word-break: break-word;
-        hyphens: auto;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .footer-links {
-        justify-content: center;
-    }
-
-    .hero {
-        min-height: auto;
-        padding-top: 100px;
-        padding-bottom: var(--spacing-xl);
-    }
-
-    .about,
-    .schedule,
-    .contact {
-        padding: var(--spacing-xl) 0;
-    }
-
-    .schedule-header {
-        flex-direction: column;
-    }
-
-    .schedule-time {
-        margin-top: var(--spacing-sm);
     }
 }
 
@@ -1115,46 +945,16 @@ p {
         padding: 0 var(--spacing-sm);
     }
 
-    .hero-title {
-        font-size: 2rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1rem;
-    }
-
-    .hero-description {
-        font-size: 0.95rem;
-    }
-
-    .section-title {
-        font-size: 1.5rem;
-    }
-
-    p {
-        font-size: 0.95rem;
-    }
-
-    .about-grid {
-        grid-template-columns: 1fr !important;
-    }
-
-    .feature-card {
-        width: 100% !important;
-    }
-
-    .schedule-header {
-        flex-direction: column;
-    }
-
-    .schedule-time {
-        margin-top: var(--spacing-sm);
-    }
-
-    .btn {
-        padding: var(--spacing-sm) var(--spacing-md);
-        font-size: 0.9rem;
-    }
+    .hero-title { font-size: 2rem; }
+    .hero-subtitle { font-size: 1rem; }
+    .hero-description { font-size: 0.95rem; }
+    .section-title { font-size: 1.5rem; }
+    p { font-size: 0.95rem; }
+    .about-grid { grid-template-columns: 1fr !important; }
+    .feature-card { width: 100% !important; }
+    .schedule-header { flex-direction: column; }
+    .schedule-time { margin-top: var(--spacing-sm); }
+    .btn { padding: var(--spacing-sm) var(--spacing-md); font-size: 0.9rem; }
 
     .hero-eyebrow,
     .hero-title,
@@ -1164,5 +964,11 @@ p {
         overflow-wrap: anywhere;
         word-break: break-word;
         white-space: normal;
+    }
+
+    .about-grid,
+    .contact-grid,
+    .schedule-container {
+        grid-template-columns: 1fr !important;
     }
 }
